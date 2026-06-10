@@ -6,11 +6,18 @@
 
 ## Latest additions
 
-- Added initial domain files for modeling case and juror concepts.
-- Added scaffold classes for juror profile types in `juror.py`:
-  - `BacisProfile` (basic profile placeholder)
-  - `EnhancedProfile` (enhanced profile placeholder)
-- Added starter comments in `case.py` and `juror.py` to define implementation direction.
+- Added dataclass-based domain models for juror and case data.
+- Implemented `juror.py` profile models:
+  - `BasicProfile` with core demographic and background fields:
+    - `age_range`, `gender`, `marital_status`, `num_of_children`
+    - `education_level`, `occupation`, `employment_status`, `income_range`
+    - `homeownership_status`, `military_status`, `prior_jury_service`
+  - `EnhancedProfile` with supplemental screening fields:
+    - `business_owner`, `union_member`, `prior_law_enforcement`
+    - `legal_professional`, `government_employee`, `prior_witness_experience`
+- Implemented `case.py` with `CaseProfile` dataclass:
+  - `case_type`
+  - `questionnaire_fields`
 
 ## Current project structure
 
@@ -29,7 +36,7 @@ This project is being built incrementally as part of Python backend learning, wi
 
 ## Next development milestones
 
-- Implement concrete fields and behavior for juror profiles.
-- Add case attributes that influence juror scoring.
+- Add validation and normalization for profile field values.
+- Expand case attributes that influence juror scoring.
 - Build a scoring function with transparent rule-based output.
 - Introduce tests for profile validation and scoring logic.

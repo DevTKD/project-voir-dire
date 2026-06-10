@@ -15,5 +15,12 @@ class BasicProfile:
     military_status: str
     prior_jury_service: str
 
+@dataclass
 class EnhancedProfile:
-    pass
+    business_owner: str
+    union_member: str
+    prior_law_enforcement: str
+    legal_professional: str
+    government_employee: str
+    prior_witness_experience: str
+    
