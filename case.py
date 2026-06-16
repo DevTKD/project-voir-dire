@@ -5,5 +5,6 @@ from dataclasses import dataclass
 @dataclass
 class CaseProfile:
     case_type: str
+    jurisdiction: str
     questionnaire_fields: list
 
