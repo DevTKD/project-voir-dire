@@ -1,23 +1,32 @@
-# project-voir-dire
+# Project Voir Dire
 
-**Voir dire** (vwar-DEER) is the legal process of questioning potential jurors to determine their suitability for a trial.
+**Voir dire** (vwar-DEER) is the legal process of questioning potential jurors to evaluate their suitability for trial.
 
-`project-voir-dire` is a Python backend learning project that simulates the core scoring engine of a fictional jury consulting firm, **Prevail Analytics**.
+`project-voir-dire` is a Python backend learning project that models the early scoring engine of a fictional jury consulting firm, **Prevail Analytics**.
 
-## Latest additions
+## Project goal
+
+Build an explainable, rule-based system that uses synthetic juror data and case context to estimate whether a juror may lean plaintiff-friendly or defense-friendly in a fictional civil trial.
+
+The project is being developed incrementally, with a planned path toward an API layer, persistence, authentication, testing, and CI/CD.
+
+## Latest update
+
+### June 16, 2026
 
 - Added dataclass-based domain models for juror and case data.
 - Implemented `juror.py` profile models:
-  - `BasicProfile` with core demographic and background fields:
-    - `age_range`, `gender`, `marital_status`, `num_of_children`
-    - `education_level`, `occupation`, `employment_status`, `income_range`
-    - `homeownership_status`, `military_status`, `prior_jury_service`
-  - `EnhancedProfile` with supplemental screening fields:
-    - `business_owner`, `union_member`, `prior_law_enforcement`
-    - `legal_professional`, `government_employee`, `prior_witness_experience`
-- Implemented `case.py` with `CaseProfile` dataclass:
-  - `case_type`
-  - `questionnaire_fields`
+  - `BasicProfile` with core demographic and background fields.
+  - `EnhancedProfile` with supplemental screening fields.
+- Updated `case.py` models:
+  - Added `CaseQuestion` with `field`, `trigger_answer`, and `weight`.
+  - Updated `CaseProfile` with `case_type`, `jurisdiction`, and `questions` (`list[CaseQuestion]`).
+
+## Changelog
+
+### 2026-06-16
+
+- Documented and aligned model changes for `CaseQuestion` and `CaseProfile` in `README.MD`.
 
 ## Current project structure
 
@@ -28,11 +37,6 @@ Project-Voir-Dire/
 └── README.MD
 ```
 
-## Project goal
-
-The system will use synthetic juror profiles, weighted scoring rules, and explainable calculations to estimate whether a juror may lean more plaintiff-friendly or defense-friendly in a fictional civil trial scenario.
-
-This project is being built incrementally as part of Python backend learning, with a planned path toward a REST API, persistence, authentication, testing, and CI/CD.
 
 ## Next development milestones
 
