@@ -12,17 +12,18 @@ The project is being developed incrementally, with a planned path toward an API 
 
 ## Latest update
 
-### June 16, 2026
+### June 24, 2026
 
-- Added dataclass-based domain models for juror and case data.
-- Implemented `juror.py` profile models:
-  - `BasicProfile` with core demographic and background fields.
-  - `EnhancedProfile` with supplemental screening fields.
-- Updated `case.py` models:
-  - Added `CaseQuestion` with `field`, `trigger_answer`, and `weight`.
-  - Updated `CaseProfile` with `case_type`, `jurisdiction`, and `questions` (`list[CaseQuestion]`).
+- Added `evaluation.py` to connect a juror profile with a case profile and store the resulting `juror_score`.
+- Kept the dataclass-based domain model split across:
+  - `juror.py` for juror profile data.
+  - `case.py` for case context and screening questions.
 
 ## Changelog
+
+### 2026-06-24
+
+- Documented the new evaluation model and updated the project structure.
 
 ### 2026-06-16
 
@@ -33,6 +34,7 @@ The project is being developed incrementally, with a planned path toward an API 
 ```text
 Project-Voir-Dire/
 ├── case.py
+├── evaluation.py
 ├── juror.py
 └── README.MD
 ```
