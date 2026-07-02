@@ -12,14 +12,20 @@ The project is being developed incrementally, with a planned path toward an API 
 
 ## Latest update
 
-### June 24, 2026
+### July 2, 2026
 
-- Added `evaluation.py` to connect a juror profile with a case profile and store the resulting `juror_score`.
-- Kept the dataclass-based domain model split across:
+- Added `scorer.py` as the home for juror scoring logic.
+- Set up initial imports in `scorer.py` to use:
+  - `case.py` for case context.
   - `juror.py` for juror profile data.
-  - `case.py` for case context and screening questions.
+- Kept `evaluation.py` as the relationship model that stores a juror's score for a specific case.
 
 ## Changelog
+
+### 2026-07-02
+
+- Added `scorer.py` and documented the initial scoring module scaffold.
+- Updated the project structure to include `scorer.py`.
 
 ### 2026-06-24
 
@@ -36,6 +42,7 @@ Project-Voir-Dire/
 ├── case.py
 ├── evaluation.py
 ├── juror.py
+├── scorer.py
 └── README.MD
 ```
 
@@ -44,5 +51,5 @@ Project-Voir-Dire/
 
 - Add validation and normalization for profile field values.
 - Expand case attributes that influence juror scoring.
-- Build a scoring function with transparent rule-based output.
+- Implement `juror_score()` in `scorer.py` with transparent rule-based output.
 - Introduce tests for profile validation and scoring logic.
