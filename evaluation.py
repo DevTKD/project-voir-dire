@@ -7,5 +7,5 @@ from juror import BasicProfile
 class Evaluation:
     juror: BasicProfile
     case: CaseProfile
-    juror_score: int
     answers: dict
+    juror_score: int = 0

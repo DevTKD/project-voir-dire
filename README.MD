@@ -12,15 +12,26 @@ The project is being developed incrementally, with a planned path toward an API 
 
 ## Latest update
 
-### July 2, 2026
+### July 16, 2026
 
-- Added `scorer.py` as the home for juror scoring logic.
-- Set up initial imports in `scorer.py` to use:
-  - `case.py` for case context.
-  - `juror.py` for juror profile data.
-- Kept `evaluation.py` as the relationship model that stores a juror's score for a specific case.
+- Updated `evaluation.py` so `Evaluation` stores:
+  - the `juror` (`BasicProfile`)
+  - the `case` (`CaseProfile`)
+  - an `answers` dictionary keyed by question field
+  - a persisted `juror_score` value (default `0`)
+- Implemented `juror_score(evaluation: Evaluation)` in `scorer.py` to:
+  - iterate through `evaluation.case.questions`
+  - match each juror answer to `trigger_answer`
+  - add matching `weight` values into a total score
+  - write the computed total back to `evaluation.juror_score`
+  - return the computed score
 
 ## Changelog
+
+### 2026-07-16
+
+- Documented completed scoring behavior in `scorer.py`, including question/answer trigger matching and weighted totals.
+- Documented `Evaluation` fields in `evaluation.py`, including answers storage and persisted `juror_score`.
 
 ### 2026-07-02
 
@@ -51,5 +62,5 @@ Project-Voir-Dire/
 
 - Add validation and normalization for profile field values.
 - Expand case attributes that influence juror scoring.
-- Implement `juror_score()` in `scorer.py` with transparent rule-based output.
+- Expand scoring rules beyond exact trigger-answer matches.
 - Introduce tests for profile validation and scoring logic.
