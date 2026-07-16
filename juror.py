@@ -12,8 +12,8 @@ class BasicProfile:
     employment_status: str
     income_range: str
     homeownership_status: str
-    military_status: str
-    prior_jury_service: str
+    military_status: bool
+    prior_jury_service: bool
 
 @dataclass
 class EnhancedProfile:
