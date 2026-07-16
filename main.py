@@ -44,3 +44,14 @@ score = juror_score(evaluation1)
 print(f"Juror: {juror1.occupation}, {juror1.age_range}")
 print(f"Case: {criminal_case.case_type} - {criminal_case.jurisdiction}")
 print(f"Final Score: {score}")
+
+def display_score_bar(score, min_score=-100, max_score=100):
+    bar_length = 60
+    normalized = (score - min_score) / (max_score - min_score)
+    filled = int(normalized * bar_length)
+    bar = "█" * filled + "░" * (bar_length - filled)
+    print(f"\nScore: {score} / 100")
+    print(f"\n  [{bar}]")
+    print(f"   Defense{'':<18}Neutral{'':<18}Plaintiff")
+
+display_score_bar(score)
