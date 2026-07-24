@@ -10,14 +10,14 @@ from scorer import juror_score
 caldwell_case = CaseProfile(
     case_type="medical_malpractice",
     jurisdiction="Cook County",
-    retained_by= RetainingParty.DEFENSE,
+    retained_by=RetainingParty.DEFENSE,
     questions=[
-        CaseQuestion(field="trust_in_doctors", trigger_answer="low", weight=-30),
-        CaseQuestion(field="personal_medical_injury", trigger_answer="yes", weight=-25),
-        CaseQuestion(field="family_medical_injury", trigger_answer="yes", weight=-20),
-        CaseQuestion(field="filed_lawsuit_before", trigger_answer="yes", weight=-20),
-        CaseQuestion(field="trust_in_hospitals", trigger_answer="low", weight=-25),
-        CaseQuestion(field="believes_doctors_overworked", trigger_answer="yes", weight=10),
+        CaseQuestion(field="trust_in_doctors", trigger_answer="low", weight=30),
+        CaseQuestion(field="personal_medical_injury", trigger_answer="yes", weight=25),
+        CaseQuestion(field="family_medical_injury", trigger_answer="yes", weight=20),
+        CaseQuestion(field="filed_lawsuit_before", trigger_answer="yes", weight=20),
+        CaseQuestion(field="trust_in_hospitals", trigger_answer="low", weight=25),
+        CaseQuestion(field="believes_doctors_overworked", trigger_answer="yes", weight=-10),
     ]
 )
 
